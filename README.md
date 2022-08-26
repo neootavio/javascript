@@ -1,5 +1,5 @@
 # javascript
  Curso de javascript
 
- https://neootavio.github.io/javascript/sor-pinto
-curso
+ https://neootavio.github.io/javascript/
+

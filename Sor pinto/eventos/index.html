@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <style>
+        .quadrado {
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+            color: white;
+            text-align: center;
+            position: relative;
+            align-content: center;
+            border: 1px solid black;
+            margin: 2px;
+            padding: 2px;
+            display: inline-block;
+            grid-template: 1fr, 1fr;
+        }
+
+        #xp2 {
+            background-color: cornflowerblue;
+        }
+
+        #xp5 {
+            background-color: coral;
+        }
+
+        #xp10 {
+            background-color: crimson;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="quadrado" onclick="calculaXP(1)">
+        1 XP
+    </div>
+
+    <div id="xp2" class="quadrado" onclick="calculaXP(2)">
+        2 XP
+    </div>
+
+    <div id="xp5" class="quadrado" onclick="calculaXP(5)">
+        5 XP
+    </div>
+
+    <div id="xp10" class="quadrado" onclick="calculaXP(10)">
+        10 XP
+    </div>
+
+
+    <script>
+        var level = 1;
+        var pontosXP = 0;
+        var condicao = level + 3;
+
+
+        function levelUp() {
+
+            if (level < 5) {
+                level++
+                condicao += 3
+            } else if (level < 10) {
+                level++
+                condicao += 4
+            } else if (level < 30) {
+                level++
+                condicao += 7
+            } else {
+                level++
+                condicao += 21
+            }
+
+            alert("Level up!");
+        }
+
+        function calculaXP(xp) {
+
+            pontosXP += xp
+            console.log(level);
+
+            if (pontosXP > condicao) {
+                levelUp();
+                xp = 0;
+            }
+
+
+            mostraNivel();
+        }
+
+        function mostraNivel() {
+            alert("Nivel: " + level);
+            alert("pontos XP: " + pontosXP);
+
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -42,11 +42,3 @@ function mostraNivel() {
     alert("pontos XP: " + pontosXP);
 
 }
-
-class Jogador {
-    constructor (nome, lv, xp)
-
-    this.nome = toString(nome)
-    this.level = lv
-    this.experiencia = xp
-}

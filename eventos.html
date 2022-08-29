@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+            text-align: center;
+            margin: 5px;
+            display: inline-block;
+            color: burlywood;
+        }
+    </style>
+    <title>Eventos Sor Pinto</title>
+</head>
+
+
+<body>
+    <div onclick="mudaCor1()">
+        Clique aqui
+    </div>
+
+    <div ondblclick="mudaCor2()">
+        Double click
+    </div>
+
+    <div id="q3" onmousedown="mudaCor3()">
+        Mouse Down
+    </div>
+
+    <div id="q4" onmouseup="mudaCor4()">
+        Mouse Up
+    </div>
+
+
+    <script>
+        function teste1(){
+            alert("Funcionou!");
+        }
+
+        function mudaCor1(){
+            quadrado = document.getElementById('q3');
+            quadrado.style.backgroundColor = "chocolate"
+        }
+
+        function mudaCor2(){
+            quadrado = document.getElementById('q3');
+            quadrado.style.backgroundColor = "crimson"
+        }
+
+        function mudaCor3(){
+            quadrado = document.getElementById('q3');
+            quadrado.style.backgroundColor = "limegreen"
+        }
+
+        function mudaCor4(){
+            quadrado = document.getElementById('q3');
+            quadrado.style.backgroundColor = "burlywood"
+        }
+    </script>
+</body>
+</html>

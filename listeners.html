@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .quadrado{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+            text-align: center;
+            color: white;
+            position: relative;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
+    <title>Listeners</title>
+    
+</head>
+<body>
+    <div class="quadrado">
+        Mouse Down
+    </div>
+
+
+    
+    
+
+    <script>
+        var minhadiv = document.getElementsByTagName('div')[0];
+
+        minhadiv.addEventListener('mousedown', teste1);
+        
+
+        function teste1(e){
+            alert("Funcionou!");
+            console.log(e);
+            switch (e.which){
+                case 1: alert("Esquerdo"); break;
+                case 2: alert("Meio"); break;
+                case 3: alert("Direito"); break;
+
+            }
+        }
+
+        window.addEventListener('keydown', teclado);
+        function teclado(e){
+            switch(e.code){
+                case "ArrowUp": minhadiv.style.top = (parseInt(minhadiv.style.top)+1) - 'px'; break;
+
+                case "ArrowDown": minhadiv.style.top = (parseInt(minhadiv.style.top)+1) + 'px'; break;
+
+                case "ArrowLeft": minhadiv.style.left = (parseInt(minhadiv.style.left)-1) + 'px'; break;
+
+                case "ArrowRight": minhadiv.style.left = (parseInt(minhadiv.style.left)+1) + 'px'; break;
+            }
+        }
+
+
+    </script>
+</body>
+</html>

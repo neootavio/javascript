@@ -12,8 +12,8 @@
             text-align: center;
             color: white;
             position: relative;
-            left: 100px;
-            top: 100px;
+            left: 0px;
+            top: 0px;
         }
     </style>
     <title>Listeners</title>
@@ -24,11 +24,26 @@
         Mouse Down
     </div>
 
+    <form onsubmit="return valida(this)">
+        Nome completo: <input name="nome" type="text">
+        <input type="submit">
+    </form>
+
 
     
     
 
     <script>
+
+        function valida(f){
+            if(f.nome.value.split(' ').length < 2){
+                alert('preencha o nome completo');
+                f.nome.focus();
+                return false;
+            }
+            return true;
+        }
+
         var minhadiv = document.getElementsByTagName('div')[0];
 
         minhadiv.addEventListener('mousedown', teste1);
